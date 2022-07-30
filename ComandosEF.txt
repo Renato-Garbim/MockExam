@@ -1,0 +1,2 @@
+add-migration Dev-Renato-HeroAngularContext -project Repositorio -context HeroAngularContext -start WebAPIMock -verbose
+update-database -project Repositorio -context HeroAngularContext -start WebAPIMock -verbose

@@ -1,0 +1,88 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32630.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPIMock", "WebAPIMock\WebAPIMock.csproj", "{6082AB94-213E-4A0A-B92F-85544AE505E3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositorio", "Repositorio\Repositorio.csproj", "{12C2F6F8-79CE-4852-942F-C196721DD08E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - visual", "1 - visual", "{F72DACA2-ABEE-4AD5-80D1-4DA93FA18723}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - infra", "3 - infra", "{00818A12-E0FC-4A89-8C7A-51D10ADAE500}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - ComandosEUtilities", "0 - ComandosEUtilities", "{89B59F31-AD50-4F51-8704-3DAD7443D189}"
+	ProjectSection(SolutionItems) = preProject
+		ComandosEF.txt = ComandosEF.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIMock.CrossCutting.IOC", "APIMock.CrossCutting.IOC\APIMock.CrossCutting.IOC.csproj", "{935E402F-4FBB-451F-B6ED-8CB7025AF12D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Middleware", "2 - Middleware", "{BFF23384-0F6F-4980-9805-B32794B37E29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiMock.Dominio", "ApiMock.Dominio\ApiMock.Dominio.csproj", "{48298B80-6D78-4586-B6B3-7A2E53951EC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiMock.AutoMapper", "ApiMock.AutoMapper\ApiMock.AutoMapper.csproj", "{04872A2F-8430-457E-973F-4392D2A398B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockApi.DTO", "MockApi.DTO\MockApi.DTO.csproj", "{5FEE2006-883D-4074-BDD2-D77EBD58364F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{4B13979D-B9BD-4822-AB3E-9C2A87C71BF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockApi.Dominio.Entidades", "MockApi.Dominio.Entidades\MockApi.Dominio.Entidades.csproj", "{BB0FBAD6-A815-44A6-A692-91455986569C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6082AB94-213E-4A0A-B92F-85544AE505E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6082AB94-213E-4A0A-B92F-85544AE505E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6082AB94-213E-4A0A-B92F-85544AE505E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6082AB94-213E-4A0A-B92F-85544AE505E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12C2F6F8-79CE-4852-942F-C196721DD08E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12C2F6F8-79CE-4852-942F-C196721DD08E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12C2F6F8-79CE-4852-942F-C196721DD08E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12C2F6F8-79CE-4852-942F-C196721DD08E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{935E402F-4FBB-451F-B6ED-8CB7025AF12D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{935E402F-4FBB-451F-B6ED-8CB7025AF12D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{935E402F-4FBB-451F-B6ED-8CB7025AF12D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{935E402F-4FBB-451F-B6ED-8CB7025AF12D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48298B80-6D78-4586-B6B3-7A2E53951EC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48298B80-6D78-4586-B6B3-7A2E53951EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48298B80-6D78-4586-B6B3-7A2E53951EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48298B80-6D78-4586-B6B3-7A2E53951EC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04872A2F-8430-457E-973F-4392D2A398B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04872A2F-8430-457E-973F-4392D2A398B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04872A2F-8430-457E-973F-4392D2A398B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04872A2F-8430-457E-973F-4392D2A398B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FEE2006-883D-4074-BDD2-D77EBD58364F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FEE2006-883D-4074-BDD2-D77EBD58364F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FEE2006-883D-4074-BDD2-D77EBD58364F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FEE2006-883D-4074-BDD2-D77EBD58364F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B13979D-B9BD-4822-AB3E-9C2A87C71BF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B13979D-B9BD-4822-AB3E-9C2A87C71BF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B13979D-B9BD-4822-AB3E-9C2A87C71BF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B13979D-B9BD-4822-AB3E-9C2A87C71BF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB0FBAD6-A815-44A6-A692-91455986569C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB0FBAD6-A815-44A6-A692-91455986569C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB0FBAD6-A815-44A6-A692-91455986569C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB0FBAD6-A815-44A6-A692-91455986569C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6082AB94-213E-4A0A-B92F-85544AE505E3} = {F72DACA2-ABEE-4AD5-80D1-4DA93FA18723}
+		{12C2F6F8-79CE-4852-942F-C196721DD08E} = {00818A12-E0FC-4A89-8C7A-51D10ADAE500}
+		{935E402F-4FBB-451F-B6ED-8CB7025AF12D} = {BFF23384-0F6F-4980-9805-B32794B37E29}
+		{48298B80-6D78-4586-B6B3-7A2E53951EC1} = {00818A12-E0FC-4A89-8C7A-51D10ADAE500}
+		{04872A2F-8430-457E-973F-4392D2A398B7} = {BFF23384-0F6F-4980-9805-B32794B37E29}
+		{5FEE2006-883D-4074-BDD2-D77EBD58364F} = {BFF23384-0F6F-4980-9805-B32794B37E29}
+		{4B13979D-B9BD-4822-AB3E-9C2A87C71BF2} = {BFF23384-0F6F-4980-9805-B32794B37E29}
+		{BB0FBAD6-A815-44A6-A692-91455986569C} = {00818A12-E0FC-4A89-8C7A-51D10ADAE500}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EF840632-9374-48A7-A2D5-44ADB5A105DD}
+	EndGlobalSection
+EndGlobal
