@@ -50,14 +50,6 @@ namespace WebAPIMock
                             .AllowCredentials();
                 });
 
-                //options.AddPolicy( builder =>
-                //{
-                //    builder
-                //            .WithOrigins("http://localhost:4200")
-                //            .AllowAnyMethod()
-                //            .AllowAnyHeader()
-                //            .AllowCredentials();
-                //});
             });
 
             services.AddAuthentication(CertificateAuthenticationDefaults.AuthenticationScheme).AddCertificate();

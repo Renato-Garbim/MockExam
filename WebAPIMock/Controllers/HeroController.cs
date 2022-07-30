@@ -39,9 +39,7 @@ namespace WebAPIMock.Controllers
         public async Task<ActionResult<HeroDTO>> Post(HeroDTO dados)
         {
             _service.AdicionarOuAtualizar(dados);
-
-            Console.WriteLine('Novo Registro Gerado no Banco.');
-
+            
             await _hub.SendMessage("Novo Registro Gerado no Banco.");
 
             return Ok();
