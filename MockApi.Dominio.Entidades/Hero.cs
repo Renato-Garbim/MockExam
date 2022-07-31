@@ -20,7 +20,7 @@ namespace MockApi.Dominio.Entidades
 
         public Hero(int id, string name, string power, string sidekick, int idade, string tipoSanguineo)
         {
-            Id = Id;
+            Id = id;
             Name = name;
             Power = power;
             Sidekick = sidekick;

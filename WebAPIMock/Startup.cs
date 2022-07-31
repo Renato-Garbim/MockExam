@@ -35,7 +35,8 @@ namespace WebAPIMock
             services.AddControllers();
             services.AddSignalR();
 
-            var connection = @"Server=DESKTOP-FSTOFJN;initial catalog=APIMockUp.AspNetCore.NewDb;Trusted_Connection=True;ConnectRetryCount=0";
+            //var connection = @"Server=DESKTOP-FSTOFJN;initial catalog=APIMockUp.AspNetCore.NewDb;Trusted_Connection=True;ConnectRetryCount=0";
+            var connection = @"Server=localhost;initial catalog=APIMockUp.AspNetCore.NewDb;Trusted_Connection=True;ConnectRetryCount=0";
 
             services.AddDbContext<HeroAngularContext>(options => options.UseSqlServer(connection));
 
