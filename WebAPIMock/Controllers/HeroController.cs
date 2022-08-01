@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using MockApi.DTO;
 using System;
@@ -19,19 +20,29 @@ namespace WebAPIMock.Controllers
     public class HeroController : ControllerBase
     {
         private readonly IHeroAppService _service;
+        private readonly IHubContext<ClientHub> _hubContext;
 
-        public HeroController(IHeroAppService service)
+        public HeroController(IHeroAppService service, IHubContext<ClientHub> hubContext)
         {
             _service = service;
+            _hubContext = hubContext;
 
         }
 
         [HttpGet]
         public async Task<IEnumerable<HeroDTO>> Get()
         {
-            //await _hub.SendMessage("Recebendo registros.");
+            var registros = _service.ObterTodos();
+            var quantidadeRegistrosNaBase = QuantidadeHeroisEncontrados(registros);            
 
-            return _service.ObterTodos();
+            await _hubContext.Clients.All.SendAsync("Send", $"Foram recuperados {quantidadeRegistrosNaBase} herói(s) da base.");
+
+            return registros;
+        }
+
+        private int QuantidadeHeroisEncontrados(IEnumerable<HeroDTO> listaRecuperada)
+        {
+            return listaRecuperada.Count();
         }
 
         // POST api/values
@@ -40,7 +51,7 @@ namespace WebAPIMock.Controllers
         {
             _service.AdicionarOuAtualizar(dados);
             
-            //await _hub.SendMessage("Novo Registro Gerado no Banco.");
+            await _hubContext.Clients.All.SendAsync("Send", $"Novo Herói {dados.Name} adicionado a base.");
 
             return Ok();
         }
@@ -70,6 +81,8 @@ namespace WebAPIMock.Controllers
 
             _service.AdicionarOuAtualizar(item);
 
+            await _hubContext.Clients.All.SendAsync("Send", $"Herói {item.Name} atualizado na base.");
+
             return NoContent();
         }
 
@@ -78,6 +91,9 @@ namespace WebAPIMock.Controllers
         public async Task<IActionResult> DeleteHero(int id)
         {
             var hero =  _service.Remover(id);
+
+            await _hubContext.Clients.All.SendAsync("Send", $"Herói {id} removido da base.");
+
             return NoContent();
         }
     }
