@@ -119,7 +119,7 @@ namespace WebAPIMock
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapHub<ClientHub>("/clientHub/general");
+                endpoints.MapHub<ClientHub>("/clientHub");
             });
         }
     }

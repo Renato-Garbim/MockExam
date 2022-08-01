@@ -19,18 +19,18 @@ namespace WebAPIMock.Controllers
     public class HeroController : ControllerBase
     {
         private readonly IHeroAppService _service;
-        private readonly ClientHub _hub;
 
         public HeroController(IHeroAppService service)
         {
             _service = service;
-            _hub = new ClientHub();
 
         }
 
         [HttpGet]
-        public IEnumerable<HeroDTO> Get()
+        public async Task<IEnumerable<HeroDTO>> Get()
         {
+            //await _hub.SendMessage("Recebendo registros.");
+
             return _service.ObterTodos();
         }
 
@@ -40,7 +40,7 @@ namespace WebAPIMock.Controllers
         {
             _service.AdicionarOuAtualizar(dados);
             
-            await _hub.SendMessage("Novo Registro Gerado no Banco.");
+            //await _hub.SendMessage("Novo Registro Gerado no Banco.");
 
             return Ok();
         }

@@ -8,9 +8,9 @@ namespace WebAPIMock.Hubs
 {
     public class ClientHub : Hub
     {
-        public async Task SendMessage(string message)
+        public Task Send(string message)
         {
-            await Clients.All.SendAsync("ReceiveMessage", message);            
+            return Clients.All.SendAsync("Send", message);
         }
     }
 }

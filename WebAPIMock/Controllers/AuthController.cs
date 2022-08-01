@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WebAPIMock.Credencial;
+using WebAPIMock.Hubs;
 using WebAPIMock.Settings;
 using WebAPIMock.ViewModel;
 
@@ -23,14 +25,19 @@ namespace WebAPIMock.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly AppSettings _appSettings;
 
-        public AuthController(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager, IOptions<AppSettings> appSettings)
+        private readonly IHubContext<ClientHub> _hubContext;
+
+
+        public AuthController(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager, IOptions<AppSettings> appSettings, IHubContext<ClientHub> hubContext )
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _appSettings = appSettings.Value;
+            _hubContext = hubContext;
+
         }
 
-        [HttpPost]
+        [HttpPost("registrar")]
         public async Task<ActionResult> Registrar(RegisterUserViewModel registerUser)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState.Values.SelectMany(e => e.Errors));
@@ -46,7 +53,7 @@ namespace WebAPIMock.Controllers
 
             if (!result.Succeeded) return BadRequest(result.Errors);
 
-            await _signInManager.SignInAsync(user, false);
+            await _signInManager.SignInAsync(user, false);           
 
             return Ok(await GerarJwt(registerUser.Email));
         }
@@ -66,6 +73,8 @@ namespace WebAPIMock.Controllers
                 {
                     Jwt = token
                 };
+
+                await _hubContext.Clients.All.SendAsync("Send", "Enviando Token..");
 
                 return Ok(tokenModel);
             }

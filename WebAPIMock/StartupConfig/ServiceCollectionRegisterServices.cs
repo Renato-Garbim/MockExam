@@ -2,11 +2,13 @@
 using ApiMock.AutoMapper;
 using APIMock.CrossCutting.IOC;
 using AutoMapper;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPIMock.Hubs;
 
 namespace WebAPIMock.StartupConfig
 {
@@ -18,6 +20,8 @@ namespace WebAPIMock.StartupConfig
 
             // Core
             Bootstraper.RegisterServices(services);
+           
+
 
             return services;
         }
