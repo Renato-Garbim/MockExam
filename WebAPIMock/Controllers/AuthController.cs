@@ -84,17 +84,6 @@ namespace WebAPIMock.Controllers
 
         }
 
-        //[HttpGet]
-        //public async Task<bool> ValidarJWT(string token)
-        //{
-        //    var handler = new JwtSecurityTokenHandler();
-        //    var jsonToken = handler.ReadToken(token);
-        //    var tokenS = jsonToken as JwtSecurityToken;
-
-
-
-        //}
-
         [HttpGet]
         private async Task<string> GerarJwt(string email)
         {
