@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiMock.Dominio.Interfaces.SignalR
+namespace HerosHandles.Interfaces.SignalR
 {
     public  interface INotifyService
     {
-
+        void Enviar(string msg);
     }
 }

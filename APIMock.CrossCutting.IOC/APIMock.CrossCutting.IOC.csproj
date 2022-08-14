@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ApiMock.Dominio\ApiMock.Dominio.csproj" />
     <ProjectReference Include="..\Application\Application.csproj" />
+    <ProjectReference Include="..\HerosHandles\HerosHandles.csproj" />
     <ProjectReference Include="..\Repositorio\Repositorio.csproj" />
   </ItemGroup>
 

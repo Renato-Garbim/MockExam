@@ -10,6 +10,7 @@ namespace APIMock.CrossCutting.IOC
     {
         public static void RegisterServices(IServiceCollection container)
         {
+            HandleModule.SetModules(container);
             RepositoryModule.SetModules(container);
             ServiceModule.SetModules(container);
             ApplicationModule.SetModules(container);

@@ -32,6 +32,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockApi.Dominio.Entidades",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{0B65C4AA-DDCC-4E28-85B5-17904BC9E2EF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Handles", "5 - Handles", "{D3B78B65-BB1D-44A1-8F7C-C75B628C082D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerosHandles", "HerosHandles\HerosHandles.csproj", "{E84EC672-78E8-4555-81E7-E32CD3FC698A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +74,10 @@ Global
 		{BB0FBAD6-A815-44A6-A692-91455986569C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB0FBAD6-A815-44A6-A692-91455986569C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB0FBAD6-A815-44A6-A692-91455986569C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E84EC672-78E8-4555-81E7-E32CD3FC698A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E84EC672-78E8-4555-81E7-E32CD3FC698A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E84EC672-78E8-4555-81E7-E32CD3FC698A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E84EC672-78E8-4555-81E7-E32CD3FC698A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +91,7 @@ Global
 		{5FEE2006-883D-4074-BDD2-D77EBD58364F} = {BFF23384-0F6F-4980-9805-B32794B37E29}
 		{4B13979D-B9BD-4822-AB3E-9C2A87C71BF2} = {BFF23384-0F6F-4980-9805-B32794B37E29}
 		{BB0FBAD6-A815-44A6-A692-91455986569C} = {0B65C4AA-DDCC-4E28-85B5-17904BC9E2EF}
+		{E84EC672-78E8-4555-81E7-E32CD3FC698A} = {D3B78B65-BB1D-44A1-8F7C-C75B628C082D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF840632-9374-48A7-A2D5-44ADB5A105DD}

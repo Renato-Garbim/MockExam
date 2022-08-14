@@ -1,17 +1,20 @@
-﻿using ApiMock.Dominio.Interfaces;
-using ApiMock.Dominio.Services;
+﻿using HerosHandles.Interfaces.SignalR;
+using HerosHandles.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace APIMock.CrossCutting.IOC.Modules
 {
-    public class ServiceModule
+    public class HandleModule
     {
         public static void SetModules(IServiceCollection container)
         {
-            container.AddScoped<IHeroService, HeroService>();
+
+            container.AddScoped<INotifyService, NotifyService>();
 
 
         }

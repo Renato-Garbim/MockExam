@@ -11,7 +11,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WebAPIMock.Credencial;
-using WebAPIMock.Hubs;
 using WebAPIMock.Settings;
 using WebAPIMock.ViewModel;
 
@@ -24,16 +23,12 @@ namespace WebAPIMock.Controllers
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly AppSettings _appSettings;
-
-        private readonly IHubContext<ClientHub> _hubContext;
-
-
-        public AuthController(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager, IOptions<AppSettings> appSettings, IHubContext<ClientHub> hubContext )
+        
+        public AuthController(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager, IOptions<AppSettings> appSettings)
         {
             _signInManager = signInManager;
             _userManager = userManager;
-            _appSettings = appSettings.Value;
-            _hubContext = hubContext;
+            _appSettings = appSettings.Value;           
 
         }
 
@@ -74,7 +69,7 @@ namespace WebAPIMock.Controllers
                     Jwt = token
                 };
 
-                await _hubContext.Clients.All.SendAsync("Send", "Enviando Token..");
+                //await _hubContext.Clients.All.SendAsync("Send", "Enviando Token..");
 
                 return Ok(tokenModel);
             }

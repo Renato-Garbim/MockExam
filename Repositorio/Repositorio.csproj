@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HerosHandles\HerosHandles.csproj" />
     <ProjectReference Include="..\MockApi.Dominio.Entidades\MockApi.Dominio.Entidades.csproj" />
   </ItemGroup>
   

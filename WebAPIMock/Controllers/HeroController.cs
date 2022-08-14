@@ -9,7 +9,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebAPIMock.Hubs;
 using WebAPIMock.ViewModel;
 
 namespace WebAPIMock.Controllers
@@ -20,12 +19,10 @@ namespace WebAPIMock.Controllers
     public class HeroController : ControllerBase
     {
         private readonly IHeroAppService _service;
-        private readonly IHubContext<ClientHub> _hubContext;
-
-        public HeroController(IHeroAppService service, IHubContext<ClientHub> hubContext)
+        
+        public HeroController(IHeroAppService service)
         {
-            _service = service;
-            _hubContext = hubContext;
+            _service = service;            
 
         }
 
@@ -35,7 +32,7 @@ namespace WebAPIMock.Controllers
             var registros = _service.ObterTodos();
             var quantidadeRegistrosNaBase = QuantidadeHeroisEncontrados(registros);            
 
-            await _hubContext.Clients.All.SendAsync("Send", $"Foram recuperados {quantidadeRegistrosNaBase} herói(s) da base.");
+            //await _hubContext.Clients.All.SendAsync("Send", $"Foram recuperados {quantidadeRegistrosNaBase} herói(s) da base.");
 
             return registros;
         }
@@ -51,7 +48,7 @@ namespace WebAPIMock.Controllers
         {
             _service.AdicionarOuAtualizar(dados);
             
-            await _hubContext.Clients.All.SendAsync("Send", $"Novo Herói {dados.Name} adicionado a base.");
+            //await _hubContext.Clients.All.SendAsync("Send", $"Novo Herói {dados.Name} adicionado a base.");
 
             return Ok();
         }
@@ -81,7 +78,7 @@ namespace WebAPIMock.Controllers
 
             _service.AdicionarOuAtualizar(item);
 
-            await _hubContext.Clients.All.SendAsync("Send", $"Herói {item.Name} atualizado na base.");
+            //await _hubContext.Clients.All.SendAsync("Send", $"Herói {item.Name} atualizado na base.");
 
             return NoContent();
         }
@@ -92,7 +89,7 @@ namespace WebAPIMock.Controllers
         {
             var hero =  _service.Remover(id);
 
-            await _hubContext.Clients.All.SendAsync("Send", $"Herói {id} removido da base.");
+            //await _hubContext.Clients.All.SendAsync("Send", $"Herói {id} removido da base.");
 
             return NoContent();
         }

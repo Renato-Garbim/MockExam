@@ -1,3 +1,4 @@
+using HerosHandles.Hubs;
 using Microsoft.AspNetCore.Authentication.Certificate;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -10,7 +11,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Repositorio;
 using System.Text;
-using WebAPIMock.Hubs;
 using WebAPIMock.Settings;
 using WebAPIMock.StartupConfig;
 
@@ -119,7 +119,7 @@ namespace WebAPIMock
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapHub<ClientHub>("/clientHub");
+                endpoints.MapHub<CRUDHub>("/clientHub");
             });
         }
     }
