@@ -21,47 +21,39 @@ namespace Domain.Utilities.CrossCutting
 
         public bool InsertRecord(TEntityDTO objeto)
         {
-            //var entity = Mapper.Map<TEntity>(objeto);
+            var entity = Mapper.Map<TEntity>(objeto);
 
-            //return _repository.InsertRecord(entity);
-
-            return true;
+            return _repository.InsertRecord(entity);            
         }
 
         public bool UpdateRecord(TEntityDTO objeto)
         {
-            //var entity = Mapper.Map<TEntity>(objeto);
+            var entity = Mapper.Map<TEntity>(objeto);
 
-            //return _repository.UpdateRecord(entity);
+            return _repository.UpdateRecord(entity);
 
-            return true;
         }
 
         public IEnumerable<TEntityDTO> GetAllRecords()
-        {            
-            //var baseRegistries = _repository.GetAllRecords();
+        {
+            var baseRegistries = _repository.GetAllRecords();
 
-            //return Mapper.Map<IEnumerable<TEntityDTO>>(baseRegistries);
-            
-            return new List<TEntityDTO>();
+            return Mapper.Map<IEnumerable<TEntityDTO>>(baseRegistries);
+
         }
 
         public TEntityDTO GetRecordById(int id)
         {
             var register = _repository.GetRecordById(id);
-
-            TEntityDTO? obj = (TEntityDTO)Activator.CreateInstance(typeof(TEntityDTO), new object[] { });
-
-            return obj;
+            
+            return Mapper.Map<TEntityDTO>(register);
         }
 
         public bool RemoveRecord(TEntityDTO objeto)
         {
-            //var entity = Mapper.Map<TEntity>(objeto);
-
-            TEntity? obj = (TEntity)Activator.CreateInstance(typeof(TEntity), new object[] { });
-
-            return _repository.RemoveRecord(obj);
+            var entity = Mapper.Map<TEntity>(objeto);
+            
+            return _repository.RemoveRecord(entity);
         }
 
 
