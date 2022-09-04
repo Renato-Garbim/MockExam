@@ -2,15 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.1" />
   </ItemGroup>
 
+
   <ItemGroup>
+    <ProjectReference Include="..\Domain.Utilities.CrossCutting\Domain.Utilities.CrossCutting.csproj" />
     <ProjectReference Include="..\Dominio.HeroMicroservice.Entities\Dominio.HeroMicroservice.Entities.csproj" />
     <ProjectReference Include="..\MockApi.DTO\MockApi.DTO.csproj" />
+    <ProjectReference Include="..\Repository.Hero\Repository.HeroMicroservice.csproj" />
+    <ProjectReference Include="..\Repository.Utilities.CrossCutting\Repository.Utilities.CrossCutting.csproj" />
   </ItemGroup>
 
 </Project>

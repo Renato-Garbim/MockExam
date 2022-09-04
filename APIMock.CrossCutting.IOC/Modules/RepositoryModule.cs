@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Repositorio.Repository;
-using Repositorio.Repository.Interface;
+using Repository.HeroMicroservice;
 using System;
 using System.Collections.Generic;
 using System.Text;

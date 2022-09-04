@@ -1,5 +1,5 @@
-﻿using ApiMock.Dominio.Interfaces;
-using ApiMock.Dominio.Services;
+﻿using Domain.HeroMicroservice.Services;
+using Domain.HeroMicroservice.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;

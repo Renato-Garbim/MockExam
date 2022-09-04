@@ -13,7 +13,6 @@ namespace APIMock.CrossCutting.IOC
             HandleModule.SetModules(container);
             RepositoryModule.SetModules(container);
             ServiceModule.SetModules(container);
-            ApplicationModule.SetModules(container);
 
         }
     }

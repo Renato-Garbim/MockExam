@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Dominio.HeroMicroservice.Entities\Dominio.HeroMicroservice.Entities.csproj" />
     <ProjectReference Include="..\HerosHandles\HerosHandles.csproj" />
-    <ProjectReference Include="..\MockApi.Dominio.Entidades\MockApi.Dominio.Entidades.csproj" />
   </ItemGroup>
   
 </Project>

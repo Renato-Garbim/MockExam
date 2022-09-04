@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Dominio.HeroMicroservice.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using MockApi.Dominio.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Text;

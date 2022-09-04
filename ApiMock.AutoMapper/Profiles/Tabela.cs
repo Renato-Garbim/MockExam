@@ -1,4 +1,4 @@
-﻿using MockApi.Dominio.Entidades;
+﻿using Dominio.HeroMicroservice.Entities;
 using MockApi.DTO;
 using System;
 using System.Collections.Generic;

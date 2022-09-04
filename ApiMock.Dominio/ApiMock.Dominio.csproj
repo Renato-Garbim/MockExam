@@ -6,6 +6,7 @@
   
   <ItemGroup>
     <ProjectReference Include="..\Repositorio\Repositorio.csproj" />
+    <ProjectReference Include="..\Repository.Utilities.CrossCutting\Repository.Utilities.CrossCutting.csproj" />
   </ItemGroup>
 
 </Project>
