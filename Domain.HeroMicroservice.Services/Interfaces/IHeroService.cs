@@ -1,6 +1,6 @@
 ﻿using Domain.Utilities.CrossCutting;
 using Dominio.HeroMicroservice.Entities;
-using MockApi.DTO;
+using HeroMicroservice.DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;

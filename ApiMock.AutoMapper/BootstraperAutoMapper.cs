@@ -1,10 +1,10 @@
-﻿using ApiMock.AutoMapper.Profiles;
-using AutoMapper;
+﻿using AutoMapper;
+using HeroMicroservice.AutoMapper.Profiles;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ApiMock.AutoMapper
+namespace HeroMicroservice.AutoMapper
 {
     public static class BootstraperAutoMapper
     {

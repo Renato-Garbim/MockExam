@@ -1,10 +1,10 @@
 ﻿using Domain.HeroMicroservice.Services.Interfaces;
+using HeroMicroservice.DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
-using MockApi.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;

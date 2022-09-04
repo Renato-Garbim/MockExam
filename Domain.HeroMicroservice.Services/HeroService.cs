@@ -2,7 +2,7 @@
 using Domain.HeroMicroservice.Services.Interfaces;
 using Domain.Utilities.CrossCutting;
 using Dominio.HeroMicroservice.Entities;
-using MockApi.DTO;
+using HeroMicroservice.DTO;
 using Repository.HeroMicroservice;
 
 namespace Domain.HeroMicroservice.Services

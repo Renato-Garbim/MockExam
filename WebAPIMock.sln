@@ -5,9 +5,9 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPIMock", "WebAPIMock\WebAPIMock.csproj", "{6082AB94-213E-4A0A-B92F-85544AE505E3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositorio", "Repositorio\Repositorio.csproj", "{12C2F6F8-79CE-4852-942F-C196721DD08E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfraMiggration", "Repositorio\InfraMiggration.csproj", "{12C2F6F8-79CE-4852-942F-C196721DD08E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - visual", "1 - visual", "{F72DACA2-ABEE-4AD5-80D1-4DA93FA18723}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - API", "1 - API", "{F72DACA2-ABEE-4AD5-80D1-4DA93FA18723}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - infra", "4 - infra", "{00818A12-E0FC-4A89-8C7A-51D10ADAE500}"
 EndProject
@@ -16,13 +16,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - ComandosEUtilities", "0
 		ComandosEF.txt = ComandosEF.txt
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIMock.CrossCutting.IOC", "APIMock.CrossCutting.IOC\APIMock.CrossCutting.IOC.csproj", "{935E402F-4FBB-451F-B6ED-8CB7025AF12D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroMicroservice.CrossCutting.IOC", "APIMock.CrossCutting.IOC\HeroMicroservice.CrossCutting.IOC.csproj", "{935E402F-4FBB-451F-B6ED-8CB7025AF12D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Middleware", "2 - Middleware", "{BFF23384-0F6F-4980-9805-B32794B37E29}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiMock.AutoMapper", "ApiMock.AutoMapper\ApiMock.AutoMapper.csproj", "{04872A2F-8430-457E-973F-4392D2A398B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroMicroservice.AutoMapper", "ApiMock.AutoMapper\HeroMicroservice.AutoMapper.csproj", "{04872A2F-8430-457E-973F-4392D2A398B7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockApi.DTO", "MockApi.DTO\MockApi.DTO.csproj", "{5FEE2006-883D-4074-BDD2-D77EBD58364F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroMicroservice.DTO", "MockApi.DTO\HeroMicroservice.DTO.csproj", "{5FEE2006-883D-4074-BDD2-D77EBD58364F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{0B65C4AA-DDCC-4E28-85B5-17904BC9E2EF}"
 EndProject
@@ -30,15 +30,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Utilities", "5 - Utilit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HerosHandles", "HerosHandles\HerosHandles.csproj", "{E84EC672-78E8-4555-81E7-E32CD3FC698A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Utilities.CrossCutting", "Repository.Utilities.CrossCutting\Repository.Utilities.CrossCutting.csproj", "{8BDDF1FE-1262-47E8-A54E-82859F53332C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository.Utilities.CrossCutting", "Repository.Utilities.CrossCutting\Repository.Utilities.CrossCutting.csproj", "{8BDDF1FE-1262-47E8-A54E-82859F53332C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.HeroMicroservice", "Repository.Hero\Repository.HeroMicroservice.csproj", "{A70DD164-8F14-4439-8FF4-4B62773EFCE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository.HeroMicroservice", "Repository.Hero\Repository.HeroMicroservice.csproj", "{A70DD164-8F14-4439-8FF4-4B62773EFCE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio.HeroMicroservice.Entities", "Dominio.HeroMicroservice.Entities\Dominio.HeroMicroservice.Entities.csproj", "{98D64B32-0981-4026-B7CA-18D50C651CCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio.HeroMicroservice.Entities", "Dominio.HeroMicroservice.Entities\Dominio.HeroMicroservice.Entities.csproj", "{98D64B32-0981-4026-B7CA-18D50C651CCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.HeroMicroservice.Services", "Domain.HeroMicroservice.Services\Domain.HeroMicroservice.Services.csproj", "{DAAE7489-7C30-438A-BCF5-5577925B2CD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.HeroMicroservice.Services", "Domain.HeroMicroservice.Services\Domain.HeroMicroservice.Services.csproj", "{DAAE7489-7C30-438A-BCF5-5577925B2CD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Utilities.CrossCutting", "Domain.Utilities.CrossCutting\Domain.Utilities.CrossCutting.csproj", "{3875EE87-E11B-4D98-B542-B7EEE6655A06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Utilities.CrossCutting", "Domain.Utilities.CrossCutting\Domain.Utilities.CrossCutting.csproj", "{3875EE87-E11B-4D98-B542-B7EEE6655A06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

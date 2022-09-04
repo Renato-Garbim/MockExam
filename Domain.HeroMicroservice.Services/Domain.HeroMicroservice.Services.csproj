@@ -14,7 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Domain.Utilities.CrossCutting\Domain.Utilities.CrossCutting.csproj" />
     <ProjectReference Include="..\Dominio.HeroMicroservice.Entities\Dominio.HeroMicroservice.Entities.csproj" />
-    <ProjectReference Include="..\MockApi.DTO\MockApi.DTO.csproj" />
+    <ProjectReference Include="..\MockApi.DTO\HeroMicroservice.DTO.csproj" />
     <ProjectReference Include="..\Repository.Hero\Repository.HeroMicroservice.csproj" />
     <ProjectReference Include="..\Repository.Utilities.CrossCutting\Repository.Utilities.CrossCutting.csproj" />
   </ItemGroup>

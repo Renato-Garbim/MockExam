@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MockApi.DTO
+namespace HeroMicroservice.DTO
 {
     public class HeroDTO
     {

@@ -1,10 +1,10 @@
-﻿using APIMock.CrossCutting.IOC.Modules;
+﻿using HeroMicroservice.CrossCutting.IOC.Modules;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace APIMock.CrossCutting.IOC
+namespace HeroMicroservice.CrossCutting.IOC
 {
     public class Bootstraper
     {

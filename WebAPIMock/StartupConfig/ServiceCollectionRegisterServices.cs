@@ -1,7 +1,6 @@
-﻿
-using ApiMock.AutoMapper;
-using APIMock.CrossCutting.IOC;
-using AutoMapper;
+﻿using AutoMapper;
+using HeroMicroservice.AutoMapper;
+using HeroMicroservice.CrossCutting.IOC;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.DependencyInjection;
 using System;

@@ -23,9 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ApiMock.AutoMapper\ApiMock.AutoMapper.csproj" />
-    <ProjectReference Include="..\APIMock.CrossCutting.IOC\APIMock.CrossCutting.IOC.csproj" />    
-    <ProjectReference Include="..\MockApi.DTO\MockApi.DTO.csproj" />
+    <ProjectReference Include="..\ApiMock.AutoMapper\HeroMicroservice.AutoMapper.csproj" />
+    <ProjectReference Include="..\APIMock.CrossCutting.IOC\HeroMicroservice.CrossCutting.IOC.csproj" />    
+    <ProjectReference Include="..\MockApi.DTO\HeroMicroservice.DTO.csproj" />
   </ItemGroup>
 
 

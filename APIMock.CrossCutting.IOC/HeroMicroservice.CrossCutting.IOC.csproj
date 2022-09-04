@@ -7,7 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Domain.HeroMicroservice.Services\Domain.HeroMicroservice.Services.csproj" />
     <ProjectReference Include="..\HerosHandles\HerosHandles.csproj" />
-    <ProjectReference Include="..\Repositorio\Repositorio.csproj" />
+    <ProjectReference Include="..\Repositorio\InfraMiggration.csproj" />
     <ProjectReference Include="..\Repository.Hero\Repository.HeroMicroservice.csproj" />
   </ItemGroup>
 

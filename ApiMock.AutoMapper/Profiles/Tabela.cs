@@ -1,10 +1,10 @@
 ﻿using Dominio.HeroMicroservice.Entities;
-using MockApi.DTO;
+using HeroMicroservice.DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ApiMock.AutoMapper.Profiles
+namespace HeroMicroservice.AutoMapper.Profiles
 {
     public class Tabela : global::AutoMapper.Profile
     {

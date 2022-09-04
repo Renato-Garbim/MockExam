@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace APIMock.CrossCutting.IOC.Modules
+namespace HeroMicroservice.CrossCutting.IOC.Modules
 {
     public class ServiceModule
     {

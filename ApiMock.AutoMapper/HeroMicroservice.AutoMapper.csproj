@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Dominio.HeroMicroservice.Entities\Dominio.HeroMicroservice.Entities.csproj" />
-    <ProjectReference Include="..\MockApi.DTO\MockApi.DTO.csproj" />
+    <ProjectReference Include="..\MockApi.DTO\HeroMicroservice.DTO.csproj" />
   </ItemGroup>
 
 </Project>

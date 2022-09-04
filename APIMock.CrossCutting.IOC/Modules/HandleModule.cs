@@ -2,7 +2,7 @@
 using HerosHandles.Services;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace APIMock.CrossCutting.IOC.Modules
+namespace HeroMicroservice.CrossCutting.IOC.Modules
 {
     public class HandleModule
     {
