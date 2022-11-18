@@ -1,5 +1,5 @@
 ﻿using Dominio.HeroMicroservice.Entities;
-using Repositorio;
+using InfraMiggration;
 using Repository.Utilities.CrossCutting;
 using System;
 using System.Collections.Generic;

@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Repositorio;
+﻿using InfraMiggration;
+using Microsoft.EntityFrameworkCore;
 using Repository.Utilities.CrossCutting.Interface;
 using System;
 using System.Collections.Generic;
