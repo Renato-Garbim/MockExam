@@ -20,7 +20,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroMicroservice.AutoMapper
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroMicroservice.DTO", "MockApi.DTO\HeroMicroservice.DTO.csproj", "{5FEE2006-883D-4074-BDD2-D77EBD58364F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Utilities - CrossCutting", "3 - Utilities - CrossCutting", "{D3B78B65-BB1D-44A1-8F7C-C75B628C082D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Utilities - Framework", "3 - Utilities - Framework", "{D3B78B65-BB1D-44A1-8F7C-C75B628C082D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HerosHandles", "HerosHandles\HerosHandles.csproj", "{E84EC672-78E8-4555-81E7-E32CD3FC698A}"
 EndProject
