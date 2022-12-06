@@ -14,6 +14,7 @@ namespace Repository.Utilities.CrossCutting
         protected readonly HeroAngularContext Db;
         protected readonly DbSet<TEntity> DBSet;
 
+        // for future implementation of a dapper 
         private readonly string _strConexao;
 
         public RepositoryBase(HeroAngularContext db)
@@ -27,15 +28,12 @@ namespace Repository.Utilities.CrossCutting
 
         }
 
-        public void Dispose()
+        protected virtual void Dispose(bool disposing)
         {
-            Db.Dispose();
-            GC.SuppressFinalize(this);
-        }
-
-        private void AlterarBanco()
-        {
-            Db.SaveChanges();
+            if (disposing)
+            {
+                Db.Dispose();
+            }
         }
 
         public virtual IQueryable<TEntity> GetAllRecords()
@@ -51,7 +49,6 @@ namespace Repository.Utilities.CrossCutting
             try
             {
                 DBSet.Add(obj);
-                AlterarBanco();
 
                 inseridoSucesso = true;
 
@@ -69,10 +66,8 @@ namespace Repository.Utilities.CrossCutting
             var updateSucesso = false;
 
             try
-            {
+            {                                
                 DBSet.Update(obj);
-                AlterarBanco();
-
                 updateSucesso = true;
             }
             catch (DbUpdateException /* ex */)
@@ -93,7 +88,6 @@ namespace Repository.Utilities.CrossCutting
             try
             {
                 DBSet.Remove(obj);
-                AlterarBanco();
 
                 removidoSucesso = true;
             }
