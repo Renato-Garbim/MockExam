@@ -8,7 +8,7 @@ namespace Repository.HeroMicroservice.Interfaces
 {
     public interface IUnityOfWork : IDisposable
     {
-        IHeroRepository Hero { get; }
         Task CommitAsync();
+        void Rollback();
     }
 }

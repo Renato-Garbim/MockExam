@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Repository.HeroMicroservice.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace Repository.Utilities.CrossCutting.Interface
 {
-    public interface IRepositoryBase<TEntity> where TEntity : class
+    public interface IRepositoryBase<TEntity> : IUnityOfWork where TEntity : class
     {
         IQueryable<TEntity> GetAllRecords();
         bool InsertRecord(TEntity obj);

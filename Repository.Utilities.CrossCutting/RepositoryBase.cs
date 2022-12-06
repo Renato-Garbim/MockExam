@@ -28,14 +28,6 @@ namespace Repository.Utilities.CrossCutting
 
         }
 
-        protected virtual void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                Db.Dispose();
-            }
-        }
-
         public virtual IQueryable<TEntity> GetAllRecords()
         {
             var registros = DBSet.AsNoTracking().AsQueryable();
@@ -105,6 +97,32 @@ namespace Repository.Utilities.CrossCutting
 
             return registro;
         }
+
+        public Task CommitAsync()
+        {
+            return Db.SaveChangesAsync();
+        }
+
+        public void Rollback()
+        {
+            Db.Rollback();
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                Db.Dispose();
+            }
+        }
+
+
 
         //public virtual TEntity GetRecordById(Guid id)
         //{
