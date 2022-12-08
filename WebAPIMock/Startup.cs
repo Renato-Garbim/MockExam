@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using WebAPIMock.Middeware;
 using WebAPIMock.Settings;
 using WebAPIMock.StartupConfig;
 
@@ -106,6 +107,8 @@ namespace WebAPIMock
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseMiddleware<ErrorHandlingMiddleware>();
 
             app.UseHttpsRedirection();
             app.UseRouting();
