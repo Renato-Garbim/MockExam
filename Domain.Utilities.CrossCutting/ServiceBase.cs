@@ -1,5 +1,7 @@
 ﻿
 using AutoMapper;
+using Domain.Utilities.CrossCutting.Delegates;
+using FluentValidation.Results;
 using Repository.Utilities.CrossCutting.Interface;
 using System;
 using System.Collections.Generic;
@@ -13,6 +15,8 @@ namespace Domain.Utilities.CrossCutting
         private readonly IRepositoryBase<TEntity> _repository;
         protected readonly IMapper Mapper;
 
+        public event CanBeChangedAtDataBase<TEntity> RegisterIsValidToBeChanged;
+
         public ServiceBase(IRepositoryBase<TEntity> repository, IMapper mapper)
         {
             _repository = repository;
@@ -21,9 +25,23 @@ namespace Domain.Utilities.CrossCutting
 
         public bool InsertRecord(TEntityDTO objeto)
         {
+            //todo: refatorar o código para isolar o invoke
+
             var entity = Mapper.Map<TEntity>(objeto);
 
-            return _repository.InsertRecord(entity);            
+            ValidationResult objectToValidationSaveResult = GetObjectToValidationSaveResult(entity);
+
+            if (objectToValidationSaveResult == null)
+            {
+                return _repository.InsertRecord(entity);
+            }
+
+            if (!IsValidToSave(objectToValidationSaveResult))
+            {
+                return false;
+            }
+
+            return _repository.InsertRecord(entity);
         }
 
         public bool UpdateRecord(TEntityDTO objeto)
@@ -56,8 +74,20 @@ namespace Domain.Utilities.CrossCutting
             return _repository.RemoveRecord(entity);
         }
 
+        public virtual ValidationResult GetObjectToValidationSaveResult(TEntity obj)
+        {
+            return RegisterIsValidToBeChanged?.Invoke(obj);
+        }
 
-
+        private static bool IsValidToSave(ValidationResult validation)
+        {
+            if (validation.IsValid)
+            {
+                return true;
+            }
+            
+            return false;
+        }
 
     }
 

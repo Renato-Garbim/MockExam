@@ -56,6 +56,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Repository", "4 - Repository", "{0172FCEA-0E73-4581-B4B6-2F8B412B237D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroMicroservice.Utility.Models", "HeroMicroservice.Utility.Models\HeroMicroservice.Utility.Models.csproj", "{567F63E8-70E6-41FA-AD40-9AD4A8A7B7C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -106,6 +108,10 @@ Global
 		{3875EE87-E11B-4D98-B542-B7EEE6655A06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3875EE87-E11B-4D98-B542-B7EEE6655A06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3875EE87-E11B-4D98-B542-B7EEE6655A06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{567F63E8-70E6-41FA-AD40-9AD4A8A7B7C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{567F63E8-70E6-41FA-AD40-9AD4A8A7B7C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{567F63E8-70E6-41FA-AD40-9AD4A8A7B7C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{567F63E8-70E6-41FA-AD40-9AD4A8A7B7C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -132,6 +138,7 @@ Global
 		{DBABC565-0D8E-4559-BC71-5049C8AE6F8B} = {C8704FB3-078D-4487-85A4-CA92A8F75CB4}
 		{AC67B66E-D88E-4F63-B6EF-12D6E98FEBBE} = {C8704FB3-078D-4487-85A4-CA92A8F75CB4}
 		{0172FCEA-0E73-4581-B4B6-2F8B412B237D} = {C8704FB3-078D-4487-85A4-CA92A8F75CB4}
+		{567F63E8-70E6-41FA-AD40-9AD4A8A7B7C5} = {12DF4E52-24E1-4445-9714-9619A6C8C247}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF840632-9374-48A7-A2D5-44ADB5A105DD}
