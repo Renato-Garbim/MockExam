@@ -49,7 +49,7 @@ namespace WebAPIMock.Middeware
                 ValidationFailures = usersValidationException.ValidationFailures
             });
 
-            _logger.LogError($"Confitec.Api --- UsersValidationException Message: {errorResponse}");
+            _logger.LogError($"Microservice Hero --- UsersValidationException Message: {errorResponse}");
 
             context.Response.ContentType = contentType;
             context.Response.StatusCode = statusCode;
@@ -67,7 +67,7 @@ namespace WebAPIMock.Middeware
                 Message = exception.InnerException is not null ? exception?.InnerException?.Message : exception?.Message
             });
 
-            _logger.LogError($"Confitec.Api --- Exception Message: {errorResponse}");
+            _logger.LogError($"Microservice Hero --- Exception Message: {errorResponse}");
 
             context.Response.ContentType = contentType;
             context.Response.StatusCode = statusCode;
