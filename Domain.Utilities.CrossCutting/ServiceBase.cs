@@ -74,7 +74,7 @@ namespace Domain.Utilities.CrossCutting
             return _repository.RemoveRecord(entity);
         }
 
-        public virtual ValidationResult GetObjectToValidationSaveResult(TEntity obj)
+        public virtual ValidationResult? GetObjectToValidationSaveResult(TEntity obj)
         {
             return RegisterIsValidToBeChanged?.Invoke(obj);
         }
