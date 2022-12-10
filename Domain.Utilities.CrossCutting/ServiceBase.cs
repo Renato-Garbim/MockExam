@@ -74,6 +74,21 @@ namespace Domain.Utilities.CrossCutting
             return _repository.RemoveRecord(entity);
         }
 
+        public Task CommitAsync()
+        {
+            return _repository.CommitAsync();
+        }
+
+        public void Rollback()
+        {
+            _repository.Rollback();
+        }
+
+        public void Dispose()
+        {
+            _repository.Dispose();
+        }
+
         public virtual ValidationResult? GetObjectToValidationSaveResult(TEntity obj)
         {
             return RegisterIsValidToBeChanged?.Invoke(obj);
@@ -88,6 +103,8 @@ namespace Domain.Utilities.CrossCutting
             
             return false;
         }
+
+
 
     }
 

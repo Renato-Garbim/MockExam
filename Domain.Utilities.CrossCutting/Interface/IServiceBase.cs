@@ -12,5 +12,8 @@ namespace Domain.Utilities.CrossCutting
         IEnumerable<TEntityDTO> GetAllRecords();
         TEntityDTO GetRecordById(int id);        
         bool RemoveRecord(TEntityDTO registro);
+        Task CommitAsync();
+        void Rollback();
+        void Dispose();
     }
 }
