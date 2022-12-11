@@ -1,10 +1,9 @@
-﻿using Repository.HeroMicroservice.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Repository.Utilities.CrossCutting.Interface
+namespace Repository.Utilities.Framework.Interfaces
 {
     public interface IRepositoryBase<TEntity> : IUnityOfWork where TEntity : class
     {

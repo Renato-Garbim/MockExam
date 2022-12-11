@@ -1,14 +1,15 @@
 ﻿
 using AutoMapper;
-using Domain.Utilities.CrossCutting.Delegates;
+using Domain.Utilities.Framework.Delegates;
+using Domain.Utilities.Framework.Interface;
 using FluentValidation.Results;
-using Repository.Utilities.CrossCutting.Interface;
+using Repository.Utilities.Framework.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Domain.Utilities.CrossCutting
+namespace Domain.Utilities.Framework
 {
     public class ServiceBase<TEntity, TEntityDTO> : IServiceBase<TEntity, TEntityDTO> where TEntity : class where TEntityDTO : class
     {
@@ -63,14 +64,14 @@ namespace Domain.Utilities.CrossCutting
         public TEntityDTO GetRecordById(int id)
         {
             var register = _repository.GetRecordById(id);
-            
+
             return Mapper.Map<TEntityDTO>(register);
         }
 
         public bool RemoveRecord(TEntityDTO objeto)
         {
             var entity = Mapper.Map<TEntity>(objeto);
-            
+
             return _repository.RemoveRecord(entity);
         }
 
@@ -100,7 +101,7 @@ namespace Domain.Utilities.CrossCutting
             {
                 return true;
             }
-            
+
             return false;
         }
 

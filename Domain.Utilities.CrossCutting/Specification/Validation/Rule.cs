@@ -1,11 +1,11 @@
-﻿using Domain.Utilities.CrossCutting.Interface;
+﻿using Domain.Utilities.Framework.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Utilities.CrossCutting.Specification.Validation
+namespace Domain.Utilities.Framework.Specification.Validation
 {
     public class Rule<T>
     {

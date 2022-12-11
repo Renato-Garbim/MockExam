@@ -7,6 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Delegates\**" />
+    <Compile Remove="Events\**" />
+    <Compile Remove="Interface\**" />
+    <Compile Remove="Specification\**" />
+    <EmbeddedResource Remove="Delegates\**" />
+    <EmbeddedResource Remove="Events\**" />
+    <EmbeddedResource Remove="Interface\**" />
+    <EmbeddedResource Remove="Specification\**" />
+    <None Remove="Delegates\**" />
+    <None Remove="Events\**" />
+    <None Remove="Interface\**" />
+    <None Remove="Specification\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
   </ItemGroup>
 

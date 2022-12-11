@@ -1,4 +1,5 @@
-﻿using Domain.Utilities.CrossCutting;
+﻿
+using Domain.Utilities.Framework.Interface;
 using Dominio.HeroMicroservice.Entities;
 using HeroMicroservice.DTO;
 using System;

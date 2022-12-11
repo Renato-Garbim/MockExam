@@ -1,4 +1,4 @@
-﻿using Domain.Utilities.CrossCutting.Interface;
+﻿using Domain.Utilities.Framework.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Utilities.CrossCutting.Specification
+namespace Domain.Utilities.Framework.Specification
 {
     public abstract class Specification<T> : ISpecification<T>
     {

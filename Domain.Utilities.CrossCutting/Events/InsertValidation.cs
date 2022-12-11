@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Utilities.CrossCutting.Events
+namespace Domain.Utilities.Framework.Events
 {
     public class InsertValidation
     {

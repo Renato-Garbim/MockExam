@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Domain.HeroMicroservice.Services.Interfaces;
 using Domain.HeroMicroservice.Services.Validation;
-using Domain.Utilities.CrossCutting;
+using Domain.Utilities.Framework;
 using Dominio.HeroMicroservice.Entities;
 using HeroMicroservice.DTO;
 using Repository.HeroMicroservice;

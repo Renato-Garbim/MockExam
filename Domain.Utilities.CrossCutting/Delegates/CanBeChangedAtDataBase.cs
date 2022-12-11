@@ -1,7 +1,7 @@
 ﻿using FluentValidation.Results;
 
 
-namespace Domain.Utilities.CrossCutting.Delegates
+namespace Domain.Utilities.Framework.Delegates
 {
-    public delegate ValidationResult CanBeChangedAtDataBase<in TEntity>(TEntity data) where TEntity : class;    
+    public delegate ValidationResult CanBeChangedAtDataBase<in TEntity>(TEntity data) where TEntity : class;
 }

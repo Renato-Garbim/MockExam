@@ -1,13 +1,13 @@
 ﻿using InfraMiggration;
 using Microsoft.EntityFrameworkCore;
-using Repository.Utilities.CrossCutting.Interface;
+using Repository.Utilities.Framework.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace Repository.Utilities.CrossCutting
+namespace Repository.Utilities.Framework
 {
     public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : class
     {
@@ -58,7 +58,7 @@ namespace Repository.Utilities.CrossCutting
             var updateSucesso = false;
 
             try
-            {                                
+            {
                 DBSet.Update(obj);
                 updateSucesso = true;
             }

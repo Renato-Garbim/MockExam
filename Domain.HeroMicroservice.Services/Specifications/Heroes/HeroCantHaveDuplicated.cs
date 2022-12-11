@@ -1,12 +1,7 @@
-﻿using Domain.Utilities.CrossCutting.Interface;
-using Domain.Utilities.CrossCutting.Specification;
+﻿using Domain.Utilities.Framework.Interface;
 using Dominio.HeroMicroservice.Entities;
 using Repository.HeroMicroservice;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Domain.HeroMicroservice.Services.Specifications.Heroes
 {

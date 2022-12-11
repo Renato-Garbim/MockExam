@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Utilities.CrossCutting.Specification.Validation
+namespace Domain.Utilities.Framework.Specification.Validation
 {
     public class SpecValidator<T>
     {

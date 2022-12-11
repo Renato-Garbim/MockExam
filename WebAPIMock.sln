@@ -24,7 +24,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Utilities - Framework",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HerosHandles", "HerosHandles\HerosHandles.csproj", "{E84EC672-78E8-4555-81E7-E32CD3FC698A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository.Utilities.CrossCutting", "Repository.Utilities.CrossCutting\Repository.Utilities.CrossCutting.csproj", "{8BDDF1FE-1262-47E8-A54E-82859F53332C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository.Utilities.Framework", "Repository.Utilities.CrossCutting\Repository.Utilities.Framework.csproj", "{8BDDF1FE-1262-47E8-A54E-82859F53332C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository.HeroMicroservice", "Repository.Hero\Repository.HeroMicroservice.csproj", "{A70DD164-8F14-4439-8FF4-4B62773EFCE9}"
 EndProject
@@ -32,7 +32,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio.HeroMicroservice.En
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.HeroMicroservice.Services", "Domain.HeroMicroservice.Services\Domain.HeroMicroservice.Services.csproj", "{DAAE7489-7C30-438A-BCF5-5577925B2CD3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Utilities.CrossCutting", "Domain.Utilities.CrossCutting\Domain.Utilities.CrossCutting.csproj", "{3875EE87-E11B-4D98-B542-B7EEE6655A06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Utilities.Framework", "Domain.Utilities.CrossCutting\Domain.Utilities.Framework.csproj", "{3875EE87-E11B-4D98-B542-B7EEE6655A06}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - MicroServices", "1 - MicroServices", "{B0CABD21-A521-4AC8-8EBB-B63585E584C7}"
 EndProject
@@ -46,7 +46,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Repository", "4 - Repos
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1 - HeroMicroService", "1.1 - HeroMicroService", "{49650926-9A90-4971-9AB7-59EC07E75486}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.2 - ShoppingCartMicroService", "1.2 - ShoppingCartMicroService", "{C8704FB3-078D-4487-85A4-CA92A8F75CB4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.2 - ItemMicroService", "1.2 - ItemMicroService", "{C8704FB3-078D-4487-85A4-CA92A8F75CB4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - API", "1 - API", "{B7E2EAB9-9A63-454B-AA72-9CB5C20BF40A}"
 EndProject
@@ -56,7 +56,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Repository", "4 - Repository", "{0172FCEA-0E73-4581-B4B6-2F8B412B237D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroMicroservice.Utility.Models", "HeroMicroservice.Utility.Models\HeroMicroservice.Utility.Models.csproj", "{567F63E8-70E6-41FA-AD40-9AD4A8A7B7C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroMicroservice.Utility.Models", "HeroMicroservice.Utility.Models\HeroMicroservice.Utility.Models.csproj", "{567F63E8-70E6-41FA-AD40-9AD4A8A7B7C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

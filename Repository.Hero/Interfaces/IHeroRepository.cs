@@ -1,8 +1,5 @@
 ﻿using Dominio.HeroMicroservice.Entities;
-using Repository.Utilities.CrossCutting.Interface;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Repository.Utilities.Framework.Interfaces;
 
 namespace Repository.HeroMicroservice
 {

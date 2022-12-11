@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace Domain.Utilities.CrossCutting.Specification
+namespace Domain.Utilities.Framework.Specification
 {
     internal sealed class IdentitySpecification<T> : Specification<T>
     {

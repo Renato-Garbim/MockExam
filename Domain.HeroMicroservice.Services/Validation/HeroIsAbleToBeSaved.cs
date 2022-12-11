@@ -1,5 +1,5 @@
 ﻿using Domain.HeroMicroservice.Services.Specifications.Heroes;
-using Domain.Utilities.CrossCutting.Specification.Validation;
+using Domain.Utilities.Framework.Specification.Validation;
 using Dominio.HeroMicroservice.Entities;
 using Repository.HeroMicroservice;
 

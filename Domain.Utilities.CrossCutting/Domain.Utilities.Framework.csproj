@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Repository.Utilities.CrossCutting\Repository.Utilities.CrossCutting.csproj" />
+    <ProjectReference Include="..\Repository.Utilities.CrossCutting\Repository.Utilities.Framework.csproj" />
   </ItemGroup>
 
 </Project>
