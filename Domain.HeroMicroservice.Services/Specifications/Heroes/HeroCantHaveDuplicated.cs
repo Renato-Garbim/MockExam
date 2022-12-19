@@ -16,7 +16,7 @@ namespace Domain.HeroMicroservice.Services.Specifications.Heroes
 
         public bool IsSatisfiedBy(Hero entity)
         {
-            return _heroRepository.GetAllRecords().Where(x => x.Name.Equals(entity.Name)).Any();            
+            return !_heroRepository.GetAllRecords().Where(x => x.Name.Equals(entity.Name)).Any();            
         }
     }
 }

@@ -29,12 +29,15 @@ namespace Domain.Utilities.Framework
             //todo: refatorar o código para isolar o invoke
 
             var entity = Mapper.Map<TEntity>(objeto);
+            var result = false;
 
             ValidationResult objectToValidationSaveResult = GetObjectToValidationSaveResult(entity);
 
             if (objectToValidationSaveResult == null)
             {
-                return _repository.InsertRecord(entity);
+                result = _repository.InsertRecord(entity);
+                _repository.CommitAsync();
+                return result;
             }
 
             if (!IsValidToSave(objectToValidationSaveResult))
@@ -42,7 +45,10 @@ namespace Domain.Utilities.Framework
                 return false;
             }
 
-            return _repository.InsertRecord(entity);
+            result = _repository.InsertRecord(entity);
+            _repository.CommitAsync();
+
+            return result;
         }
 
         public bool UpdateRecord(TEntityDTO objeto)
