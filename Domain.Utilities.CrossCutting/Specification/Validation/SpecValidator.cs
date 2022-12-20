@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Utilities.Framework.Specification.Validation
 {
-    public class SpecValidator<T>
+    public class SpecValidator<T> 
     {
         private readonly IDictionary<string, Rule<T>> _validations = new Dictionary<string, Rule<T>>();
 

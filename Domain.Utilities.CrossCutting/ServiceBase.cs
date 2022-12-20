@@ -1,6 +1,7 @@
 ﻿
 using AutoMapper;
 using Domain.Utilities.Framework.Delegates;
+using Domain.Utilities.Framework.Events;
 using Domain.Utilities.Framework.Interface;
 using FluentValidation.Results;
 using Repository.Utilities.Framework.Interfaces;
@@ -16,6 +17,8 @@ namespace Domain.Utilities.Framework
         private readonly IRepositoryBase<TEntity> _repository;
         protected readonly IMapper Mapper;
 
+        public event EventHandler<ValidateEventArgs<TEntity>> TestEvent;
+
         public event CanBeChangedAtDataBase<TEntity> RegisterIsValidToBeChanged;
 
         public ServiceBase(IRepositoryBase<TEntity> repository, IMapper mapper)
@@ -30,6 +33,8 @@ namespace Domain.Utilities.Framework
 
             var entity = Mapper.Map<TEntity>(objeto);
             var result = false;
+
+            OnTestEvent(new ValidateEventArgs<TEntity>());
 
             ValidationResult objectToValidationSaveResult = GetObjectToValidationSaveResult(entity);
 
@@ -94,6 +99,16 @@ namespace Domain.Utilities.Framework
         public void Dispose()
         {
             _repository.Dispose();
+        }
+
+        //protected virtual void OnFoodPrepared(Order order)
+        //{
+        //    FoodPrepared?.Invoke(this, new FoodPreparedEventArgs { Order = order });
+        //}
+
+        protected virtual void OnTestEvent(ValidateEventArgs<TEntity> obj)
+        {
+            TestEvent?.Invoke(this, obj);
         }
 
         public virtual ValidationResult? GetObjectToValidationSaveResult(TEntity obj)
