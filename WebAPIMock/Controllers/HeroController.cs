@@ -13,7 +13,7 @@ using WebAPIMock.ViewModel;
 
 namespace WebAPIMock.Controllers
 {
-    [Authorize]
+   
     [Route("api/[controller]")]
     [ApiController]
     public class HeroController : ControllerBase

@@ -80,7 +80,7 @@ namespace WebAPIMock
             services.AddControllers();
             services.AddSignalR();
 
-            var connection = @"Server=localhost;initial catalog=APIMockUp.AspNetCore.NewDb;Trusted_Connection=True;ConnectRetryCount=0";            
+            var connection = @"Server=localhost;initial catalog=APIMockUp.AspNetCore.NewDb;Trusted_Connection=True;ConnectRetryCount=0; MultipleActiveResultSets=True";            
             //var connection = @"Server=localhost;initial catalog=HeroDB;Trusted_Connection=True;ConnectRetryCount=0";
 
             services.AddDbContext<HeroAngularContext>(options => options.UseSqlServer(connection));

@@ -12,7 +12,6 @@ namespace BackForFrontAngular.Controllers
     {
         const string URL = "https://localhost:5001/api/Auth";
 
-
         public AuthController()
         {
         

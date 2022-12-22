@@ -1,8 +1,13 @@
+using BackForFrontAngular.Message;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddSingleton<IMessageProducer, MessageProducer>();
+builder.Services.AddSingleton<IMessageReceiver, MessageReceiver>();
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

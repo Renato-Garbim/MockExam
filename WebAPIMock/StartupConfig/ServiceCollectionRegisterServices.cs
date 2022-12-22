@@ -1,12 +1,8 @@
-﻿using AutoMapper;
-using HeroMicroservice.AutoMapper;
+﻿using HeroMicroservice.AutoMapper;
 using HeroMicroservice.CrossCutting.IOC;
-using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using WebAPIMock.Message;
+using WebAPIMock.Requests;
 
 namespace WebAPIMock.StartupConfig
 {
@@ -18,9 +14,10 @@ namespace WebAPIMock.StartupConfig
 
             // Core
             Bootstraper.RegisterServices(services);
-           
-
-
+            services.AddSingleton<IMessageProducer, MessageProducer>();
+            services.AddSingleton<IProcessoRequisicao, ProcessoRequisicao>();
+            services.AddHostedService<MessageReceiver>();
+            
             return services;
         }
 

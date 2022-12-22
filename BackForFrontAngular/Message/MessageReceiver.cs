@@ -7,17 +7,26 @@ namespace BackForFrontAngular.Message
 {
     public class MessageReceiver : IMessageReceiver
     {
-
+        private readonly IConfiguration _configuration;
         private readonly IModel _channel;
         private readonly EventingBasicConsumer _consumer;
 
-        public MessageReceiver()
+        public MessageReceiver(IConfiguration configuration)
         {
-            var factory = new ConnectionFactory { HostName = "" };
+            _configuration = configuration;
+            var factory = new ConnectionFactory { HostName = _configuration["RabbitMQHost"], Port = Int32.Parse(_configuration["RabbitMQPort"]) };
             var connection = factory.CreateConnection();
             _channel = connection.CreateModel();
-            _channel.QueueDeclare("notifications");
-            _consumer = new EventingBasicConsumer(_channel);
+
+            _channel.QueueDeclare(queue: "Notifications_Service",
+                     durable: true,
+                     exclusive: false,
+                     autoDelete: false,
+                     arguments: null);
+
+            _channel.BasicQos(prefetchSize: 0, prefetchCount: 1, global: false);
+
+            _consumer = new EventingBasicConsumer(_channel);            
         }
 
         public string CheckQueu()
@@ -27,12 +36,15 @@ namespace BackForFrontAngular.Message
             _consumer.Received += (model, eventArgs) =>
             {
                 var body = eventArgs.Body.ToArray();
-                var message = Encoding.UTF8.GetString(body);                                
-                
+                var message = Encoding.UTF8.GetString(body);
+
+
+                _channel.BasicAck(deliveryTag: eventArgs.DeliveryTag, multiple: false);
+
                 notificationMessage = message;
             };
 
-            _channel.BasicConsume(queue: "notifications", autoAck: true, consumer: _consumer);
+            _channel.BasicConsume(queue: "Notifications_Service", autoAck: false, consumer: _consumer);
 
             return notificationMessage;
         }

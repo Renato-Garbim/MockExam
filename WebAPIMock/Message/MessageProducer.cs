@@ -1,9 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using RabbitMQ.Client;
+using System;
 using System.Text;
 using System.Threading.Channels;
 
-namespace BackForFrontAngular.Message
+namespace WebAPIMock.Message
 {
     public class MessageProducer : IMessageProducer
     {
@@ -17,11 +19,11 @@ namespace BackForFrontAngular.Message
             var connection = factory.CreateConnection();
             _channel = connection.CreateModel();
 
-            _channel.QueueDeclare(queue: "Hero_Service",
-                              durable: true,
-                              exclusive: false,
-                              autoDelete: false,
-                              arguments: null);            
+            _channel.QueueDeclare(queue: "Notifications_Service",
+                     durable: true,
+                     exclusive: false,
+                     autoDelete: false,
+                     arguments: null);
         }
 
         public void SendMessage<T>(T message)
@@ -33,7 +35,7 @@ namespace BackForFrontAngular.Message
             var properties = _channel.CreateBasicProperties();
             properties.Persistent = true;
 
-            _channel.BasicPublish(exchange: "", routingKey: "Hero_Service", body: body);            
+            _channel.BasicPublish(exchange: "", routingKey: "Notifications_Service", body: body);
         }
     }
 }
