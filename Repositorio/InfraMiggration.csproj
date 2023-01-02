@@ -14,5 +14,9 @@
     <ProjectReference Include="..\Dominio.HeroMicroservice.Entities\Dominio.HeroMicroservice.Entities.csproj" />
     <ProjectReference Include="..\HerosHandles\HerosHandles.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
   
 </Project>

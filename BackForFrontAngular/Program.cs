@@ -18,7 +18,7 @@ builder.Services.AddSingleton(serviceProvider =>
                 Uri = uri,
                 DispatchConsumersAsync = true
             };
-        });
+});
 
 
 

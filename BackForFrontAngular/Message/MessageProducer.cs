@@ -17,11 +17,30 @@ namespace BackForFrontAngular.Message
             var connection = factory.CreateConnection();
             _channel = connection.CreateModel();
 
-            _channel.QueueDeclare(queue: "Hero_Service",
-                              durable: true,
-                              exclusive: false,
-                              autoDelete: false,
-                              arguments: null);            
+            _channel.ExchangeDeclare(exchange: "hero_logs",
+                        type: "topic");
+
+            //_channel.QueueDeclare(queue: "Hero_Service",
+            //                  durable: true,
+            //                  exclusive: false,
+            //                  autoDelete: false,
+            //                  arguments: null);            
+        }
+
+        public void SendMessageExchange<T>(T message)
+        {
+            var json = JsonConvert.SerializeObject(message);
+            var body = Encoding.UTF8.GetBytes(json);
+
+            //criar o outro Binding para o Microservicehero
+
+            _channel.BasicPublish(exchange: "hero_logs",
+                                     routingKey: "binding_key_microservice_hero",
+                                     basicProperties: null, body: body);
+
+            _channel.BasicPublish(exchange: "hero_logs",
+                                     routingKey: "binding_key_microservice_logRequest",
+                                     basicProperties: null, body: body);
         }
 
         public void SendMessage<T>(T message)

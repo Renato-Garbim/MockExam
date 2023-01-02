@@ -11,21 +11,21 @@ namespace Repository.Utilities.Framework
 {
     public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : class
     {
-        protected readonly HeroAngularContext Db;
+        protected DbContext Db { get; private set; }
+
         protected readonly DbSet<TEntity> DBSet;
 
         // for future implementation of a dapper 
         private readonly string _strConexao;
 
-        public RepositoryBase(HeroAngularContext db)
+        public RepositoryBase(DbContext db)
         {
             Db = db;
             if (db == null)
                 throw new ArgumentNullException(nameof(db));
 
             DBSet = Db.Set<TEntity>();
-            _strConexao = Db.Database.GetDbConnection().ConnectionString;
-
+            _strConexao = Db.Database.GetDbConnection().ConnectionString;            
         }
 
         public virtual IQueryable<TEntity> GetAllRecords()
@@ -105,7 +105,7 @@ namespace Repository.Utilities.Framework
 
         public void Rollback()
         {
-            Db.Rollback();
+            //Db.Rollback();
         }
 
         public void Dispose()

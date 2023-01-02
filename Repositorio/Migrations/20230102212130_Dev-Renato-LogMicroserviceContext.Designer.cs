@@ -3,6 +3,7 @@ using InfraMiggration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InfraMiggration.Migrations
 {
     [DbContext(typeof(HeroAngularContext))]
-    partial class HeroAngularContextModelSnapshot : ModelSnapshot
+    [Migration("20230102212130_Dev-Renato-LogMicroserviceContext")]
+    partial class DevRenatoLogMicroserviceContext
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

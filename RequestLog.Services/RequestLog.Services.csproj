@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain.Utilities.CrossCutting\Domain.Utilities.Framework.csproj" />
+    <ProjectReference Include="..\RequestLog.Entities\RequestLog.Entities.csproj" />
+    <ProjectReference Include="..\RequestLogInfra\RequestLogInfra.csproj" />
+  </ItemGroup>
+
+</Project>

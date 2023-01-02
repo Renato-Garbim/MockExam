@@ -100,12 +100,6 @@ namespace WebAPIMock
 
             services.AddAuthentication(CertificateAuthenticationDefaults.AuthenticationScheme).AddCertificate();
 
-
-            services.AddIdentity<IdentityUser, IdentityRole>()
-                //.AddRoles<IdentityRole>()
-                .AddEntityFrameworkStores<HeroAngularContext>()
-                .AddDefaultTokenProviders();
-
             services.Configure<IdentityOptions>(options =>
             {
                 // Default Password settings.
