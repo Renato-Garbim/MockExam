@@ -8,6 +8,7 @@ using RabbitMQ.Client.Events;
 using System;
 using System.Text;
 using System.Threading;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 using WebAPIMock.Requests;
 
@@ -19,6 +20,7 @@ namespace WebAPIMock.Message
         private readonly IModel _channel;
         private readonly EventingBasicConsumer _consumer;
         private readonly IProcessoRequisicao _processoRequisicao;
+        private readonly string _queueName;
 
         public MessageReceiver(IConfiguration configuration, IProcessoRequisicao processoRequisicao)
         {
@@ -28,13 +30,14 @@ namespace WebAPIMock.Message
             var connection = factory.CreateConnection();
             _channel = connection.CreateModel();
 
-            _channel.QueueDeclare(queue: "Hero_Service",
-                              durable: true,
-                              exclusive: false,
-                              autoDelete: false,
-                              arguments: null);
+            _channel.ExchangeDeclare(exchange: "hero_logs", type: "topic");
+            _queueName = _channel.QueueDeclare().QueueName;
 
-            _channel.BasicQos(prefetchSize: 0, prefetchCount: 1, global: false);
+            _channel.QueueBind(queue: _queueName,
+                                      exchange: "hero_logs",
+                                      routingKey: "binding_key_hero");
+
+           // _channel.BasicQos(prefetchSize: 0, prefetchCount: 1, global: false);
 
             _consumer = new EventingBasicConsumer(_channel);
 
@@ -45,16 +48,40 @@ namespace WebAPIMock.Message
         {            
             _consumer.Received += (model, eventArgs) =>
             {
+                string response = null;
+
                 var body = eventArgs.Body.ToArray();
                 var message = Encoding.UTF8.GetString(body);
+
+                var props = eventArgs.BasicProperties;
+                var replyProps = _channel.CreateBasicProperties();
+                replyProps.CorrelationId = props.CorrelationId;
+
+                try
+                {
+                    _processoRequisicao.ProcessaHeroRequest(message);
+                    response = "1";
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(" [.] " + e.Message);
+                    response = "0";
+                }
+                finally
+                {
+                    var responseBytes = Encoding.UTF8.GetBytes(response);
+
+                    _channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
+                      basicProperties: replyProps, body: responseBytes);
+
+                    _channel.BasicAck(deliveryTag: eventArgs.DeliveryTag,
+                      multiple: false);
+                }
                 
-                _processoRequisicao.ProcessaHeroRequest(message);
-
-                _channel.BasicAck(deliveryTag: eventArgs.DeliveryTag, multiple: false);
-
             };
 
-            _channel.BasicConsume(queue: "Hero_Service", autoAck: false, consumer: _consumer);
+            _channel.BasicConsume(queue: _queueName, autoAck: false, consumer: _consumer);
 
             return Task.CompletedTask;
         }

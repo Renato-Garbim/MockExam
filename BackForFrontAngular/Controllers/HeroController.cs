@@ -1,5 +1,6 @@
 ﻿using BackForFrontAngular.Message;
 using BackForFrontAngular.Models.Hero;
+using BackForFrontAngular.Models.Notifications;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -14,24 +15,30 @@ namespace BackForFrontAngular.Controllers
         const string URL = "https://localhost:5001/api/Hero"; // used only for GetData from the Microservice
 
         private readonly IMessageProducer _messageProducer;
-        private readonly IMessageReceiver _messageReceiver;
-        
-        public HeroController(IMessageProducer messageProducer, IMessageReceiver messageReceiver)
+                
+        public HeroController(IMessageProducer messageProducer)
         {
             _messageProducer = messageProducer;
-            _messageReceiver = messageReceiver;
+            
         }
 
         [HttpPost("AddHero")]
         public async Task<ActionResult> Registrar(HeroViewModel heroForAdd)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState.Values.SelectMany(e => e.Errors));
+            
+            var response = _messageProducer.SendMessageExchange(heroForAdd);
+            NotificationModel notification = new NotificationModel();
+            notification.result = true;
 
-            _messageProducer.SendMessage(heroForAdd);
+            string msg;
 
-            var response = _messageReceiver.CheckQueu();
-
-            return Ok(response);
+            while (response.TryTake(out msg))
+            {
+                notification.MsgReturn = notification.MsgReturn + " ," + msg;
+            }
+                                            
+            return Ok(notification);
         }
 
     }

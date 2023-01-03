@@ -4,6 +4,6 @@ namespace WebAPIMock.Requests
 {
     public interface IProcessoRequisicao
     {
-        Task ProcessaHeroRequest(string mensagemParaConsumir);
+        Task ProcessaLogRequest(string mensagemParaConsumir);
     }
 }

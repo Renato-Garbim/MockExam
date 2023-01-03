@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Domain.Utilities.Framework": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:50491;http://localhost:50492"
+    }
+  }
+}

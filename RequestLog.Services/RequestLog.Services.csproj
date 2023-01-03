@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Domain.Utilities.CrossCutting\Domain.Utilities.Framework.csproj" />
     <ProjectReference Include="..\RequestLog.Entities\RequestLog.Entities.csproj" />
     <ProjectReference Include="..\RequestLogInfra\RequestLogInfra.csproj" />

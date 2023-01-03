@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Domain.Utilities.Framework;
-using Repository.Utilities.Framework.Interfaces;
 using RequestLog.Entities;
 using RequestLog.Services.Interfaces;
 using RequestLog.Services.Models;

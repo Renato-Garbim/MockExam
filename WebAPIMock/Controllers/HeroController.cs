@@ -46,7 +46,7 @@ namespace WebAPIMock.Controllers
         [HttpPost]
         public async Task<ActionResult<HeroDTO>> Post(HeroDTO dados)
         {
-            _service.InsertRecord(dados);
+            await _service.InsertRecord(dados);
             
             //await _hubContext.Clients.All.SendAsync("Send", $"Novo Herói {dados.Name} adicionado a base.");
 

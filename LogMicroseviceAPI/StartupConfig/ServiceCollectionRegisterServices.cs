@@ -1,6 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using LogMicroseviceAPI.MessageBroker;
+using Microsoft.Extensions.DependencyInjection;
 using RequestLog.AutoMapper;
 using RequestLog.CrossCutting.IOC;
+using WebAPIMock.Requests;
 
 namespace LogMicroseviceAPI.StartupConfig
 {
@@ -12,7 +14,8 @@ namespace LogMicroseviceAPI.StartupConfig
 
             // Core
             BootstrapIOC.RegisterServices(services);
-            
+            services.AddSingleton<IProcessoRequisicao, ProcessoRequisicao>();
+            services.AddHostedService<MessageReceiver>();
 
             return services;
         }

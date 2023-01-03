@@ -1,6 +1,8 @@
 using LogMicroseviceAPI.StartupConfig;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using RequestLogInfra;
+
 
 var builder = WebApplication.CreateBuilder(args);
 

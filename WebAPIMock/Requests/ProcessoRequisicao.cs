@@ -2,6 +2,7 @@
 using HeroMicroservice.DTO;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 using WebAPIMock.Message;
 
 namespace WebAPIMock.Requests
@@ -15,25 +16,16 @@ namespace WebAPIMock.Requests
             _scopeFactory = scopeFactory;
         }
 
-        public void ProcessaHeroRequest(string mensagemParaConsumir)
+        public async Task ProcessaHeroRequest(string mensagemParaConsumir)
         {
             using var scope = _scopeFactory.CreateScope();
 
             var heroService = scope.ServiceProvider.GetRequiredService<IHeroService>();
-            var messageService = scope.ServiceProvider.GetRequiredService<IMessageProducer>();
 
             var hero = JsonConvert.DeserializeObject<HeroDTO>(mensagemParaConsumir);
 
-            var result = heroService.InsertRecord(hero);
+            var result = await heroService.InsertRecord(hero);
 
-            // Se der erro dispara uma msg
-            if (!result) {
-                messageService.SendMessage("falha no insert.");
-            }
-            else
-            {
-                messageService.SendMessage("Insert com sucesso!.");
-            }
         }
 
     }

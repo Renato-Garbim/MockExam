@@ -20,7 +20,7 @@ namespace Domain.Utilities.Framework
             Mapper = mapper;
         }
 
-        public bool InsertRecord(TEntityDTO objeto)
+        public async Task<bool> InsertRecord(TEntityDTO objeto)
         {
             //todo: refatorar o código para isolar o invoke
 
@@ -32,7 +32,7 @@ namespace Domain.Utilities.Framework
             if (objectToValidationSaveResult == null)
             {
                 result = _repository.InsertRecord(entity);
-                _repository.CommitAsync();
+                await _repository.CommitAsync();
                 return result;
             }
 
@@ -42,7 +42,7 @@ namespace Domain.Utilities.Framework
             }
 
             result = _repository.InsertRecord(entity);
-            _repository.CommitAsync();
+            await _repository.CommitAsync();
 
             return result;
         }

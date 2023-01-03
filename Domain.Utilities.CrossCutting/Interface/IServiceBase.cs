@@ -7,7 +7,7 @@ namespace Domain.Utilities.Framework.Interface
 {
     public interface IServiceBase<TEntity, TEntityDTO> where TEntity : class where TEntityDTO : class
     {
-        bool InsertRecord(TEntityDTO objeto);
+        Task<bool> InsertRecord(TEntityDTO objeto);
         bool UpdateRecord(TEntityDTO objeto);
         IEnumerable<TEntityDTO> GetAllRecords();
         TEntityDTO GetRecordById(int id);
