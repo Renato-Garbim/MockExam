@@ -27,16 +27,20 @@ namespace BackForFrontAngular.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState.Values.SelectMany(e => e.Errors));
             
-            var response = _messageProducer.SendMessageExchange(heroForAdd);
+            var response = await _messageProducer.SendMessageExchange(heroForAdd);
+
             NotificationModel notification = new NotificationModel();
             notification.result = true;
 
             string msg;
 
-            while (response.TryTake(out msg))
+            foreach(var result in response)
             {
-                notification.MsgReturn = notification.MsgReturn + " ," + msg;
+                msg = result.ToString();
+                notification.MsgReturn = msg + "," + notification.MsgReturn;
             }
+            
+
                                             
             return Ok(notification);
         }

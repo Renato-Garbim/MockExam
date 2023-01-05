@@ -4,6 +4,6 @@ namespace BackForFrontAngular.Message
 {
     public interface IMessageProducer
     {
-        BlockingCollection<string> SendMessageExchange<T>(T message);
+        Task<string> SendMessageExchange<T>(T message);
     }
 }
