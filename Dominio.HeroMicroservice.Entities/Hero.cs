@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dominio.HeroMicroservice.Entities.ValueObject;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,12 +7,16 @@ namespace Dominio.HeroMicroservice.Entities
 {
     public class Hero
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Power { get; set; }
-        public string Sidekick { get; set; }
-        public int Idade { get; set; }
-        public string TipoSanguineo { get; set; }
+        public int Id { get; private set; }
+        public string Name { get; private set; }
+        public string Power { get; private set; }
+        public string Sidekick { get; private set; }
+        public int Idade { get; private set; }
+        public string TipoSanguineo { get; private set; }
+        public HeroStatsVO HeroStats { get; private set; }
+
+        public virtual EquipmentSlots EquipmentSlots { get; set; }
+        public virtual ICollection<Backpack> BackpackList { get; set; }
 
         public Hero()
         {
@@ -27,6 +32,5 @@ namespace Dominio.HeroMicroservice.Entities
             Idade = idade;
             TipoSanguineo = tipoSanguineo;
         }
-
     }
 }
